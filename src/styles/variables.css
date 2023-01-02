@@ -1,0 +1,11 @@
+html {
+
+}
+
+html[data-theme='light'] {
+    --text-primary: #1F1F1F;
+}
+
+html[data-theme='dark'] {
+    --text-primary: #F3F3F7;
+}
