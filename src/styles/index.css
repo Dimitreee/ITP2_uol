@@ -75,6 +75,21 @@ button {
 }
 /* Typography */
 
+/* Containers */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+/* Containers */
+
 /* Controls */
 .controls__container {
     position: absolute;
@@ -86,6 +101,28 @@ button {
     filter: var(--controls--filter);
 }
 
+#canvasContainerWrapper {
+    position: relative;
+    box-sizing: border-box;
+    resize: horizontal;
+    width: 100%;
+    max-width: 100%;
+}
+
+#canvasContainer {
+    position: relative;
+    width: 100%;
+    padding-bottom: 50%;
+}
+
+#canvasContainer canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
 .controls__wrapper {
     display: flex;
     flex-direction: row;
@@ -95,11 +132,11 @@ button {
     align-items: center;
     box-sizing: content-box;
     padding: 14px 28px;
+    gap: 8px;
 }
 
 .playback__controls {
     align-items: center;
-    padding-right: 18px;
     height: 32px;
 }
 
@@ -173,4 +210,64 @@ button {
     mask: url('../assets/icons/mute__icon.png') no-repeat center / contain;
     -webkit-mask: url('../assets/icons/mute__icon.png') no-repeat center / contain;
 }
+
+#fullscreenIcon {
+    mask: url('../assets/icons/fullscreen__icons.png') no-repeat center / contain;
+    -webkit-mask: url('../assets/icons/fullscreen__icons.png') no-repeat center / contain;
+}
 /* Icons */
+
+/* Loader */
+.clock-container {
+    position: fixed;
+    z-index: 200;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock-loader {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--clock-width);
+    height: var(--clock-width);
+    border: 3px solid var(--clock-color);
+    border-radius: 50%;
+}
+
+.clock-loader::before,
+.clock-loader::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--clock-radius) * 0.25);
+    width: var(--clock-thickness);
+    background: var(--clock-color);
+    border-radius: 10px;
+    transform-origin: center calc(100% - calc(var(--clock-thickness) / 2));
+    animation: spin infinite linear;
+}
+
+.clock-loader::before {
+    height: var(--clock-minute-length);
+    animation-duration: 2s;
+}
+
+.clock-loader::after {
+    top: calc(var(--clock-radius) * 0.25 + var(--clock-hour-length));
+    height: var(--clock-hour-length);
+    animation-duration: 15s;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+/* Loader */

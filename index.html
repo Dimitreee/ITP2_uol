@@ -14,34 +14,46 @@
 </head>
 <body>
 
-<div class="controls__container">
-  <div class="timeline__controls">
-    <span class="level__8" id="currentTime"></span>
-    <input id="seekBar" type="range" min="0" max="100" value="0" class="slider"/>
-    <span class="level__8" id="duration" ></span>
-  </div>
-  <div class="controls__wrapper">
-    <div class="playback__controls">
-      <button id="playbackButton">
-        <div id="playIcon" class="icon" style="display: block"></div>
-        <div id="pauseIcon" class="icon"></div>
-      </button>
-    </div>
-    <div class="sound__container">
-      <button id="volumeButton">
-        <div id="volumeIcon" class="icon" style="display: block"></div>
-        <div id="muteIcon" class="icon"></div>
-      </button>
-      <div class="volume__container">
-        <input id="volumeBar" type="range" min="0" max="100" value="0" class="slider"/>
+<div class="clock-container">
+  <div class="clock-loader"></div>
+</div>
+
+<div class="container">
+  <div id="canvasContainerWrapper">
+    <div id="canvasContainer"></div>
+    <div class="controls__container">
+      <div class="timeline__controls">
+<!--        <span class="level__8" id="currentTime"></span>-->
+        <input id="seekBar" type="range" min="0" max="100" value="0" class="slider"/>
+<!--        <span class="level__8" id="duration" ></span>-->
+      </div>
+      <div class="controls__wrapper">
+        <div class="playback__controls">
+          <button id="playbackButton">
+            <div id="playIcon" class="icon" style="display: block"></div>
+            <div id="pauseIcon" class="icon"></div>
+          </button>
+        </div>
+        <div class="sound__container">
+          <button id="volumeButton">
+            <div id="volumeIcon" class="icon" style="display: block"></div>
+            <div id="muteIcon" class="icon"></div>
+          </button>
+          <div class="volume__container">
+            <input id="volumeBar" type="range" min="0" max="100" value="0" class="slider"/>
+          </div>
+        </div>
+        <div class="song__info">
+          <span class="level__8" id="currentTime"></span> - <span class="level__8" id="duration" ></span>
+        </div>
+        <button id="loopButton">
+          <div id="loopIcon" class="icon" style="display: block"></div>
+        </button>
+        <button id=fullScreenButton>
+          <div id="fullscreenIcon" class="icon" style="display: block"></div>
+        </button>
       </div>
     </div>
-    <div class="song__info">
-      song info
-    </div>
-    <button id="loopButton">
-      <div id="loopIcon" class="icon" style="display: block"></div>
-    </button>
   </div>
 </div>
 

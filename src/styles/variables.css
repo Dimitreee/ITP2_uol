@@ -12,6 +12,12 @@ html {
     --transparent-border-color: hsla(0,0%,100%,.1);
     --volume--bar--height: 6px;
     --volume--bar--width: 152px;
+    --clock-color: var(--ui-base);
+    --clock-width: 4rem;
+    --clock-radius: calc(var(--clock-width) / 2);
+    --clock-minute-length: calc(var(--clock-width) * 0.4);
+    --clock-hour-length: calc(var(--clock-width) * 0.2);
+    --clock-thickness: 0.2rem;
 }
 
 html[data-theme='light'] {

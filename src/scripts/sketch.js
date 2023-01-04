@@ -1,14 +1,13 @@
-//global for the controls and input
 var controls = null;
-//store visualisations in a container
 var vis = null;
-//variable for the p5 sound object
 var sound = null;
-//variable for p5 fast fourier transform
 var fourier;
 var shaders = {
 	glow: null,
 }
+
+var canvasWidth = 0;
+var canvasHeight = 0;
 
 var store = new Store();
 
@@ -21,10 +20,15 @@ function preload(){
 }
 
 function setup(){
-	createCanvas(windowWidth, windowHeight, WEBGL);
+	const canvasContainer = document.getElementById('canvasContainer');
+	canvasWidth = canvasContainer.offsetWidth;
+	canvasHeight = canvasContainer.offsetHeight;
+	const canvas = createCanvas(canvasWidth, canvasHeight, WEBGL);
+	canvas.parent('canvasContainer');
+
 	background(getCssPropertyValue('--gray--default'));
 
-	controls = new Controls();
+	controls = new Controls(canvas);
 	fourier = new p5.FFT();
 	vis = new Visualisations(
 		[
@@ -41,6 +45,7 @@ function setup(){
 	const {volume, loop} = getKeysFromStore()
 
 	controls.init(volume, loop);
+	select('.clock-container').hide();
 }
 
 function draw(){
@@ -60,7 +65,11 @@ function keyPressed(){
 //when the window has been resized. Resize canvas to fit
 //if the visualisation needs to be resized call its onResize method
 function windowResized(){
-	resizeCanvas(windowWidth, windowHeight);
+	const canvasContainer = document.getElementById('canvasContainer');
+	canvasWidth = canvasContainer.offsetWidth;
+	canvasHeight = canvasContainer.offsetHeight;
+	resizeCanvas(canvasWidth, canvasHeight);
+
 	if(vis.selectedVisual.hasOwnProperty('onResize')){
 		vis.selectedVisual.onResize();
 	}
