@@ -65,7 +65,7 @@ function GlFractal(){
         gl.uniform2f(mouseLocation, bassEnergy, lowMidEnergy);
         gl.uniform1f(timeLocation, sound.currentTime());
 
-        sphere(bassEnergy);
+        // sphere(bassEnergy);
 
         // gl.uniform1f(chromaticVibration, max/1000 * 2);
         // gl.uniform1f(shapeSize, max/1000 * 2);
