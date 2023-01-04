@@ -1,6 +1,6 @@
 /* Common */
 body {
-    background-color: var(--gray--default);
+    background-color: var(--black--default);
     padding: 0;
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -76,15 +76,25 @@ button {
 /* Typography */
 
 /* Containers */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+    background-color: var(--gray--default);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
 .container {
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     height: 100%;
     width: 100%;
-    max-width: 920px;
+    max-width: 1024px;
     margin: 0 auto;
 }
 
@@ -107,6 +117,7 @@ button {
     resize: horizontal;
     width: 100%;
     max-width: 100%;
+    box-shadow: 1px 2px 206px -4px rgba(80, 80, 80, 0.32);
 }
 
 #canvasContainer {
@@ -128,7 +139,7 @@ button {
     flex-direction: row;
     justify-content: flex-start;
     vertical-align: center;
-    height: 32px;
+    height: 24px;
     align-items: center;
     box-sizing: content-box;
     padding: 14px 28px;
@@ -137,7 +148,7 @@ button {
 
 .playback__controls {
     align-items: center;
-    height: 32px;
+    height: 24px;
 }
 
 .sound__container {
@@ -165,8 +176,8 @@ button {
 
 /* Icons */
 .icon {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     background-color: var(--icon--background);
 }
 
