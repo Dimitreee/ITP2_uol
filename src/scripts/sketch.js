@@ -28,8 +28,8 @@ function setup(){
 	fourier = new p5.FFT();
 	vis = new Visualisations(
 		[
-			new GlPulse(),
-			// new GlColor(),
+			// new GlPulse(),
+			new GlColor(),
 			// new GlFractal(),
 			// new GlGlow(),
 			new Spectrum(),
