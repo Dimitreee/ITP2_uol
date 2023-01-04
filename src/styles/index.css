@@ -1,10 +1,24 @@
+/* Common */
 body {
-    background-color: #000;
+    background-color: var(--gray--default);
     padding: 0;
     margin: 0;
     font-family: 'Inter', sans-serif;
     color: var(--text-primary);
+    overflow: hidden;
+    height: 100vh;
 }
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+/* Common */
+
 
 /* Typography */
 .bold {
@@ -67,13 +81,96 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    margin-bottom: 20px;
+    opacity: 0.9;
+    background-color: var(--colors--dark--transparent);
+    filter: var(--controls--filter);
 }
 
 .controls__wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+    vertical-align: center;
+    height: 32px;
     align-items: center;
-    padding: 0 20px;
+    box-sizing: content-box;
+    padding: 14px 28px;
 }
+
+.playback__controls {
+    align-items: center;
+    padding-right: 18px;
+    height: 32px;
+}
+
+.sound__container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.volume__container {
+    padding: 10px 12px;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.song__info {
+}
+
+#loopButton {
+    margin-left: auto;
+}
+
+/* Icons */
+.icon {
+    width: 30px;
+    height: 30px;
+    background-color: var(--icon--background);
+}
+
+.icon.active {
+    background-color: var(--ui-base);
+}
+
+.icon.active:hover {
+    background-color: var(--ui-base--hover);
+}
+
+.icon:hover {
+    background-color: var(--icon--background--hover);
+}
+
+#playIcon, #pauseIcon, #muteIcon {
+    display: none;
+}
+
+#playIcon {
+    mask: url('../assets/icons/play__icon.png') no-repeat center / contain;
+    -webkit-mask: url('../assets/icons/play__icon.png') no-repeat center / contain;
+}
+
+#pauseIcon {
+    mask: url('../assets/icons/pause__icon.png') no-repeat center / contain;
+    -webkit-mask: url('../assets/icons/pause__icon.png') no-repeat center / contain;
+}
+
+#loopIcon {
+    mask: url('../assets/icons/loop__icon.png') no-repeat center / contain;
+    -webkit-mask: url('../assets/icons/loop__icon.png') no-repeat center / contain;
+}
+
+#volumeIcon {
+    mask: url('../assets/icons/volume__icon.png') no-repeat center / contain;
+    -webkit-mask: url('../assets/icons/volume__icon.png') no-repeat center / contain;
+}
+
+#muteIcon {
+    mask: url('../assets/icons/mute__icon.png') no-repeat center / contain;
+    -webkit-mask: url('../assets/icons/mute__icon.png') no-repeat center / contain;
+}
+/* Icons */

@@ -1,60 +1,84 @@
-//Constructor function to handle the onscreen menu, keyboard and mouse
-//controls
 function Controls(){
-	this.menuDisplayed = false;
+	this.playbackButton = select('#playbackButton');
+	this.playIcon = select("#playIcon");
+	this.pauseIcon = select("#pauseIcon");
+	this.loopButton = select("#loopButton");
+	this.loopIcon = select("#loopIcon");
+	this.seekBar = new SeekBarController();
+	this.volumeController = new VolumeController();
 
-	//playback button displayed in the top left of the screen
-	this.playbackButton = new PlaybackButton();
+	this.init = function(volume, isLooping){
+		this.volumeController.setVolume(volume);
 
-	//make the window fullscreen or revert to windowed
-	this.mousePressed = function(){
-	// 	if(!this.playbackButton.hitCheck()){
-	// 		var fs = fullscreen();
-	// 		fullscreen(!fs);
-	// 	}
-	};
+		if (isLooping) {
+			this.toggleLoop();
+		}
+	}
 
-	//responds to keyboard presses
-	//@param keycode the ascii code of the keypressed
-	// this.keyPressed = function(keycode){
-	// 	console.log(keycode);
-	// 	if(keycode == 32){
-	// 		this.menuDisplayed = !this.menuDisplayed;
-	// 	}
-	//
-	// 	if(keycode > 48 && keycode < 58){
-	// 		var visNumber = keycode - 49;
-	// 		vis.selectVisual(vis.visuals[visNumber].name);
-	// 	}
-	// };
-
-	//draws the playback button and potentially the menu
 	this.draw = function(){
-		push();
-		fill("white");
-		stroke("black");
-		strokeWeight(2);
-		textSize(34);
-
-		//playback button
-		this.playbackButton.draw();
-		//only draw the menu if menu displayed is set to true.
-		if(this.menuDisplayed){
-
-			text("Select a visualisation:", 100, 30);
-			this.menu();
-		}
-		pop();
-
+		push()
+		this.seekBar.draw();
+		this.volumeController.draw();
+		pop()
 	};
 
-	this.menu = function(){
-		//draw out menu items for each visualisation
-		for(var i = 0; i < vis.visuals.length; i++){
-			var yLoc = 70 + i*40;
-			text((i+1) + ":  " +vis.visuals[i].name, 100, yLoc);
+	this.togglePlayback = function(){
+		if (sound.isPlaying()) {
+			sound.pause();
+
+			this.playIcon.show()
+			this.pauseIcon.hide();
+		} else {
+			sound.play();
+
+			this.playIcon.hide();
+			this.pauseIcon.show();
 		}
+
+		this.seekBar.setDuration(sound.duration());
+	}
+
+	this.toggleLoop = function(){
+		sound.setLoop(!sound.isLooping());
+		this.loopIcon.toggleClass('active');
+		store.setItem(
+			'loop',
+			{ value: sound.isLooping() }
+		);
+	}
+
+	this.keyPressed = function(keycode){
+		push()
+		switch(keycode){
+			case 32:
+				if (document.activeElement) {
+					document.activeElement.blur();
+				}
+
+				this.togglePlayback();
+				break;
+			case 76:
+				this.toggleLoop();
+				break;
+			case 39:
+				this.seekBar.fastForward();
+				break;
+			case 37:
+				this.seekBar.rewind();
+				break;
+			case 77:
+				this.volumeController.toggleVolume();
+				break;
+			case 38:
+				this.volumeController.volumeUp();
+				break;
+			case 40:
+				this.volumeController.volumeDown();
+				break;
+		}
+		pop()
 	};
+
+	this.playbackButton.mouseClicked(this.togglePlayback.bind(this));
+	this.loopButton.mouseClicked(this.toggleLoop.bind(this));
 }
-
-

@@ -10,38 +10,56 @@
 
   <link rel="stylesheet" type="text/css" href="src/styles/variables.css">
   <link rel="stylesheet" type="text/css" href="src/styles/index.css">
+  <link rel="stylesheet" type="text/css" href="src/styles/slider.css">
 </head>
 <body>
 
 <div class="controls__container">
+  <div class="timeline__controls">
+    <span class="level__8" id="currentTime"></span>
+    <input id="seekBar" type="range" min="0" max="100" value="0" class="slider"/>
+    <span class="level__8" id="duration" ></span>
+  </div>
   <div class="controls__wrapper">
+    <div class="playback__controls">
+      <button id="playbackButton">
+        <div id="playIcon" class="icon" style="display: block"></div>
+        <div id="pauseIcon" class="icon"></div>
+      </button>
+    </div>
+    <div class="sound__container">
+      <button id="volumeButton">
+        <div id="volumeIcon" class="icon" style="display: block"></div>
+        <div id="muteIcon" class="icon"></div>
+      </button>
+      <div class="volume__container">
+        <input id="volumeBar" type="range" min="0" max="100" value="0" class="slider"/>
+      </div>
+    </div>
     <div class="song__info">
       song info
     </div>
-    <div class="playback__controls--container">
-      <div class="playback__controls">
-        playback__controls
-      </div>
-      <div class="timeline__controls">
-        timeline__controls
-      </div>
-    </div>
-    <div class="volume__controller">
-      volume controls
-    </div>
+    <button id="loopButton">
+      <div id="loopIcon" class="icon" style="display: block"></div>
+    </button>
   </div>
 </div>
 
 <script src="src/lib/p5.min.js"></script>
 <script src="src/lib/p5.sound.js"></script>
-
-<script src="src/scripts/sketch.js"></script>
-<script src="src/scripts/controls.js"></script>
-<script src="src/scripts/playbackButton.js"></script>
+<script src="src/scripts/utils.js"></script>
 <script src="src/scripts/visualisations.js"></script>
 
-<script src="src/scripts/needles.js"></script>
-<script src="src/scripts/wavepattern.js"></script>
-<script src="src/scripts/spectrum.js"></script>
+<script src="src/scripts/visuals/needles.js"></script>
+<script src="src/scripts/visuals/wavepattern.js"></script>
+<script src="src/scripts/visuals/spectrum.js"></script>
+<script src="src/scripts/visuals/gl/color.js"></script>
+<script src="src/scripts/visuals/gl/fractal.js"></script>
+<script src="src/scripts/visuals/gl/glow.js"></script>
+<script src="src/scripts/visuals/gl/pulse.js"></script>
+<script src="src/scripts/components/SeekBarController.js"></script>
+<script src="src/scripts/components/VolumeController.js"></script>
+<script src="src/scripts/controls.js"></script>
+<script src="src/scripts/sketch.js"></script>
 </body>
 </html>

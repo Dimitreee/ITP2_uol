@@ -6,38 +6,52 @@ var vis = null;
 var sound = null;
 //variable for p5 fast fourier transform
 var fourier;
+var shaders = {
+	glow: null,
+}
+
+var store = new Store();
 
 function preload(){
-	sound = loadSound('src/assets/stomper_reggae_bit.mp3');
+	shaders.glow = loadShader('src/assets/shaders/glow/glow.vert','src/assets/shaders/glow/glow.frag');
+	shaders.fractal = loadShader('src/assets/shaders/fractal/fractal.vert','src/assets/shaders/fractal/fractal.frag');
+	shaders.color = loadShader('src/assets/shaders/color/color.vert','src/assets/shaders/color/color.frag');
+	shaders.pulse = loadShader('src/assets/shaders/pulse/pulse.vert','src/assets/shaders/pulse/pulse.frag');
+	sound = loadSound('src/assets/drake.mp3');
 }
 
 function setup(){
-	 createCanvas(windowWidth, windowHeight);
-	 background(0);
-	 controls = new Controls();
+	createCanvas(windowWidth, windowHeight, WEBGL);
+	background(getCssPropertyValue('--gray--default'));
 
-	 //instantiate the fft object
-	 fourier = new p5.FFT();
+	controls = new Controls();
+	fourier = new p5.FFT();
+	vis = new Visualisations(
+		[
+			new GlPulse(),
+			// new GlColor(),
+			// new GlFractal(),
+			// new GlGlow(),
+			new Spectrum(),
+			new WavePattern(),
+			new Needles(),
+		]
+	);
 
-	 //create a new visualisation container and add visualisations
-	 vis = new Visualisations();
-	 vis.add(new Spectrum());
-	 vis.add(new WavePattern());
-	 vis.add(new Needles());
+	const {volume, loop} = getKeysFromStore()
 
+	controls.init(volume, loop);
 }
 
 function draw(){
-	background(0);
-	//draw the selected visualisation
+	background(getCssPropertyValue('--gray--default'));
 	vis.selectedVisual.draw();
-	//draw the controls on top.
 	controls.draw();
 }
 
-function mouseClicked(){
-	controls.mousePressed();
-}
+// function mouseClicked(){
+// 	controls.mousePressed();
+// }
 
 function keyPressed(){
 	controls.keyPressed(keyCode);
