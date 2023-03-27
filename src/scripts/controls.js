@@ -101,6 +101,19 @@ function Controls(canvas){
 			case 40:
 				this.volumeController.volumeDown();
 				break;
+			case 49:
+				vis.selectVisual('color');
+				break;
+			case 50:
+				vis.selectVisual('spectrum');
+				break;
+			case 51:
+				vis.selectVisual('wavepattern');
+				break;
+			case 52:
+				vis.selectVisual('needles');
+				break;
+
 		}
 		pop()
 	};

@@ -5,15 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07b3a8c0-7f30-45e8-b633-ca23a917725a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/music/Amaranth_Cove.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/music/Lofive.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/music/Shiruky.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scripts/controllers/PlaylistController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/drake.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/music/drake.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/drake2.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/music/drake2.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/stomper_reggae_bit.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/music/stomper_reggae_bit.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/components/SeekBarController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/controllers/SeekBarController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/components/VolumeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/controllers/VolumeController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/sketch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/sketch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/slider.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/variables.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/variables.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -31,6 +47,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/barrylarge/Personal/ITP2_uol/src/assets/music",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -38,6 +55,14 @@
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/music" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/music" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -47,6 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1672872960680</updated>
       <workItem from="1672872965043" duration="974000" />
+      <workItem from="1679897179985" duration="10366000" />
     </task>
     <servers />
   </component>
